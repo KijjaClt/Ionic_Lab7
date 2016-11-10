@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="brown">
+    <ion-title>
+      Note!
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item (click)="viewItem(item)">
+        {{item.title}}
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button large danger (click)="removeItem(item)"><ion-icon name="trash"> </ion-icon></button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button large danger (click)="editItem(item)"><ion-icon name="create"> </ion-icon></button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab (click)="addItem()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
